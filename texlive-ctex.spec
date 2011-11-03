@@ -1,3 +1,9 @@
+# revision 22488
+# category Package
+# catalog-ctan /language/chinese/ctex
+# catalog-date 2011-05-15 00:28:51 +0200
+# catalog-license lppl
+# catalog-version 1.02c
 Name:		texlive-ctex
 Version:	1.02c
 Release:	1
@@ -87,6 +93,7 @@ TeXLive ctex package.
 %doc %{_texmfdistdir}/doc/latex/ctex/test/test-cjkutf8.tex
 %doc %{_texmfdistdir}/doc/latex/ctex/test/test-xetex.tex
 %doc %{_texmfdistdir}/doc/latex/ctex/test/test-xetexgbk.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -97,3 +104,5 @@ TeXLive ctex package.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
