@@ -6,7 +6,7 @@
 # catalog-version 1.02c
 Name:		texlive-ctex
 Version:	1.02c
-Release:	9
+Release:	10
 Summary:	LaTeX classes and packages for Chinese typesetting
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/chinese/ctex
