@@ -1,6 +1,6 @@
 Name:		texlive-ctex
-Version:	2.4.14
-Release:	2
+Version:	2.4.15
+Release:	1
 Summary:	LaTeX classes and packages for Chinese typesetting
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/chinese/ctex
