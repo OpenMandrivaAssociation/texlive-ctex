@@ -1,5 +1,5 @@
 Name:		texlive-ctex
-Version:	66115
+Version:	71527
 Release:	1
 Summary:	LaTeX classes and packages for Chinese typesetting
 Group:		Publishing
