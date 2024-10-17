@@ -3,7 +3,7 @@ Version:	71527
 Release:	1
 Summary:	LaTeX classes and packages for Chinese typesetting
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/language/chinese/ctex
+URL:		https://www.ctan.org/tex-archive/language/chinese/ctex
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ctex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ctex.doc.r%{version}.tar.xz
