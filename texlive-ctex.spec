@@ -1,42 +1,65 @@
-Name:		texlive-ctex
-Version:	71527
-Release:	1
+%global tl_name ctex
+%global tl_revision 79569
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.6.1
+Release:	%{tl_revision}.1
 Summary:	LaTeX classes and packages for Chinese typesetting
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/language/chinese/ctex
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ctex.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ctex.doc.r%{version}.tar.xz
+License:	lppl1.3c
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ctex.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ctex.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ctex.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
-Requires:	texlive-ttfutils
+%texlive_base_requires
+Requires:	texlive(adobemapping)
+Requires:	texlive(atbegshi)
+Requires:	texlive(beamer)
+Requires:	texlive(chinese-jfm)
+Requires:	texlive(cjk)
+Requires:	texlive(cjkpunct)
+Requires:	texlive(ec)
+Requires:	texlive(epstopdf-pkg)
+Requires:	texlive(etoolbox)
+Requires:	texlive(everyhook)
+Requires:	texlive(fandol)
+Requires:	texlive(fontspec)
+Requires:	texlive(iftex)
+Requires:	texlive(infwarerr)
+Requires:	texlive(kvoptions)
+Requires:	texlive(kvsetkeys)
+Requires:	texlive(latex-bin)
+Requires:	texlive(ltxcmds)
+Requires:	texlive(luatexja)
+Requires:	texlive(mptopdf)
+Requires:	texlive(pdftexcmds)
+Requires:	texlive(platex-tools)
+Requires:	texlive(svn-prov)
+Requires:	texlive(tipa)
+Requires:	texlive(tools)
+Requires:	texlive(ttfutils)
+Requires:	texlive(ulem)
+Requires:	texlive(uplatex)
+Requires:	texlive(xcjk2uni)
+Requires:	texlive(xecjk)
+Requires:	texlive(xetex)
+Requires:	texlive(xkeyval)
+Requires:	texlive(xpinyin)
+Requires:	texlive(xunicode)
+Requires:	texlive(zhmetrics)
+Requires:	texlive(zhmetrics-uptex)
+Requires:	texlive(zhnumber)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-TeXLive ctex package.
+ctex is a bundle of LaTeX classes and packages for typesetting documents
+in Chinese. It works with the (pdf)LaTeX, XeLaTeX and LuaLaTeX engines,
+supports GB2312 / UTF-8 / Unicode input, integrates Chinese punctuation
+kerning, multi-engine font configuration, and provides Chinese-style
+section heading commands for the standard article / book / report
+classes.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/ctex
-%{_texmfdistdir}/tex/luatex/ctex
-%{_texmfdistdir}/tex/generic/ctex
-%doc %{_texmfdistdir}/doc/latex/ctex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
