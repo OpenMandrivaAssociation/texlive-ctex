@@ -1,9 +1,9 @@
 %global tl_name ctex
-%global tl_revision 79664
+%global tl_revision 79778
 
 Name:		texlive-%{tl_name}
 Epoch:		1
-Version:	2.6.2
+Version:	2.6.4
 Release:	%{tl_revision}.1
 Summary:	LaTeX classes and packages for Chinese typesetting
 Group:		Publishing
